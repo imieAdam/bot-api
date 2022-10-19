@@ -27,7 +27,7 @@ def create_app(test_config=None):
     # a simple page that says hello world
     @app.route('/')
     def hello():
-        return 'Hello, World!' 
+        return 'These Are Not the Droids You Are Looking For' 
 
     with app.app_context():
         from api_app.database.database import db_session, init_db, init_ma

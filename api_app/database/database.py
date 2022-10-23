@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from flask import current_app
 from flask_marshmallow import Marshmallow
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/[YOUR_DATABASE_NAME]'
+#current_app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/pyTest_1'
 engine = create_engine(current_app.config['SQLALCHEMY_DATABASE_URI'], convert_unicode=True)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,

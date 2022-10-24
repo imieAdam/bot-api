@@ -1,10 +1,10 @@
 import functools
 
 from flask import Blueprint, jsonify, request
-from api_app.models.models import (Visit, VisitToLocation, User, Specialization, TimeFrame, Location,
+from lightMed.models.models import (Visit, VisitToLocation, User, Specialization, TimeFrame, Location,
                                     VisitSchema, VisitToLocationSchema, UserSchema,  SpecializationSchema, TimeFrameSchema, LocationSchema)
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from api_app.database.database import db_session
+from lightMed.database.database import db_session
 
 bp = Blueprint('visits', __name__)
 

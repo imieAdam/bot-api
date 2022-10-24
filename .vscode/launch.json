@@ -11,7 +11,7 @@
             "module": "flask",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}",
-                "FLASK_APP": "api_app/myApp.py",
+                "FLASK_APP": "lightMed/myApp.py",
                 "FLASK_DEBUG": "1"
             },
             "args": [

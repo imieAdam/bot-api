@@ -30,10 +30,10 @@ def create_app(test_config=None):
         return 'These Are Not the Droids You Are Looking For' 
 
     with app.app_context():
-        from api_app.database.database import db_session, init_db, init_ma
+        from lightMed.database.database import db_session, init_db, init_ma
         init_db()
         init_ma()
-        from api_app.controllers.jwt import init_jwt
+        from lightMed.controllers.jwt import init_jwt
         init_jwt()
 
     @app.teardown_appcontext
@@ -47,7 +47,7 @@ def create_app(test_config=None):
     #ma.init_app(app)
 
 
-    from api_app.controllers import locations, auth_jwt, visits
+    from lightMed.controllers import locations, auth_jwt, visits
     app.register_blueprint(locations.bp)
     app.register_blueprint(auth_jwt.bp)
     app.register_blueprint(visits.bp)

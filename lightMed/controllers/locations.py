@@ -1,9 +1,10 @@
 import functools
 
 from flask import Blueprint, jsonify, request
-from api_app.models.models import (Location, LocationSchema, City, CitySchema)
+from lightMed.models.models import (Location, LocationSchema, City, CitySchema, User, UserSchema,
+                                        VisitToLocation, VisitToLocationSchema)
 from flask_jwt_extended import jwt_required
-from api_app.database.database import db_session
+from lightMed.database.database import db_session
 
 
 bp = Blueprint('locations', __name__)
@@ -91,7 +92,7 @@ def delete_location():
     else:
         return jsonify(message="Invalid id"), 404
 
-'''
+
 @bp.route('/visit_to_locations', methods=['GET'])
 def visit_to_locations():    
     visit_to_locations_schema = VisitToLocationSchema(many=True)
@@ -106,4 +107,3 @@ def users():
     user_list = User.query.all()
     result = user_schema.dump(user_list)
     return jsonify(results=result)
-'''

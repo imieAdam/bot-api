@@ -1,7 +1,7 @@
 import functools
 
 from flask import Blueprint, jsonify, request
-from api_app.models.models import User, UserSchema
+from lightMed.models.models import User, UserSchema
 from flask_jwt_extended import create_access_token
 
 

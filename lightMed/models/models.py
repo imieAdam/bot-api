@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from flask_marshmallow import Marshmallow
 from marshmallow import fields, post_load
-from api_app.database.database import Base, ma
+from lightMed.database.database import Base, ma
 
 class Location(Base):
     __tablename__ = 'locations'

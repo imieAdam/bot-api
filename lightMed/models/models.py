@@ -1,9 +1,10 @@
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
 from flask_marshmallow import Marshmallow
-from marshmallow import fields, post_load
+from flask_sqlalchemy import SQLAlchemy
 from lightMed.database.database import Base, ma
+from marshmallow import fields, post_load
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
+
 
 class Location(Base):
     __tablename__ = 'locations'

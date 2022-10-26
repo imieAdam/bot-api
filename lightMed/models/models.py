@@ -125,8 +125,13 @@ class VisitToLocationSchema(ma.SQLAlchemyAutoSchema):
     def make_visit_to_location(self, data, **kwargs):
         return VisitToLocation(**data)
 
+class LocationSchemaSimple(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Location
+
 class CitySchema(ma.SQLAlchemyAutoSchema):
     #name = fields.String()
+    locations = fields.List(fields.Nested(LocationSchemaSimple(exclude=("location_id",))))
     class Meta:
         model = City
 
@@ -136,8 +141,7 @@ class LocationSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Location
 
-class LocationSchemaSimple(ma.SQLAlchemyAutoSchema):
-    address = fields.String()
+
 
 
 class VisitToLocationSchemaForVisits(ma.SQLAlchemyAutoSchema):
